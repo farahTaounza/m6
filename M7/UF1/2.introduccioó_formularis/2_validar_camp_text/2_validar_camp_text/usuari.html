@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>FORMULARI USUARI I CONTRASENYA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Formularis amb camps de text</h1>
+        
+        <h2>Problemes</h2>
+        <ol>
+            <li><b>XSS attacks</b>: injecció de codi HTML (<b>&lt;b&gt;pepe&lt;/b&gt;</b>) o javascript (<b>&lt;script&gt;alert(‘pepe’)&lt;/script&gt;</b> o 
+                <b>&lt;script&gt;location.href('http://google.es’)&lt;/script&gt;</b>)</li>
+            <li>Que tingui " o ' que puguin interferir amb valors de les etiquetes HTML</li>
+        </ol>
+        
+        <h3>FILTER_SANITIZE_STRING</h3>
+        
+        <ol start="3">
+            <li>Que s'envïi incoluntàriament un espai en blanc (al final d'un camp): <b>trim()</b></li>
+            <li>Que sigui buit</li>          
+        </ol>
+        <br>
+        <hr>
+        <form action="usuari.php" method="get">
+            <p>
+                <label for="usuari">Usuari: </label>
+                <input type="text" name="usuari" id="usuari" placeholder="usuari">
+            </p>            
+            <p>
+                <button type="submit">Enviar</button>
+            </p>
+        </form>
+    </body>
+</html>
